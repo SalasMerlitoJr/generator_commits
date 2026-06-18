@@ -41,7 +41,7 @@ def random_date_in_last_year():
     commit_date = start_date + timedelta(days=random_days, seconds=random_seconds)
     return commit_date
 
-def make_commit(date, repo_path, filename, message="graph-greener!"):
+def make_commit(date, repo_path, filename, message="Wassup Madafaka!"):
     filepath = os.path.join(repo_path, filename)
     with open(filepath, "a") as f:
         f.write(f"Commit at {date.isoformat()}\n")
@@ -54,7 +54,8 @@ def make_commit(date, repo_path, filename, message="graph-greener!"):
 
 def main():
     print("="*60)
-    print("🌱 Welcome to graph-greener - GitHub Contribution Graph Commit Generator 🌱")
+    print("🌱 Welcome to GitHub Contribution Graph Commit Generator 🌱")
+    # print("🌱 Welcome to graph-greener - GitHub Contribution Graph Commit Generator 🌱")
     print("="*60)
     print("This tool will help you fill your GitHub contribution graph with custom commits.\n")
 
