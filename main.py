@@ -38,13 +38,6 @@ def get_filename(prompt, default="commit.txt"):
     return user_input
 
 
-def get_folder_name(prompt, default="archive"):
-    user_input = input(f"{prompt} (default {default}): ")
-    if not user_input.strip():
-        return default
-    return user_input
-
-
 def random_date_in_last_year():
     today = datetime.now()
     start_date = today - timedelta(days=365)
@@ -116,9 +109,7 @@ def main():
     num_commits = get_positive_int("How many commits do you want to make", 20)
     repo_path = get_repo_path("Enter the path to your local git repository", ".")
     filename = get_filename("Enter the filename to modify for commits", "commit.txt")
-    folder_name = get_folder_name(
-        "Enter the folder name to organize the file into after pushing", "archive"
-    )
+    folder_name = "archive"  # automatically organized here after pushing, no prompt needed
 
     print(f"\nMaking {num_commits} commits in repo: {repo_path}\nModifying file: {filename}\n")
 
